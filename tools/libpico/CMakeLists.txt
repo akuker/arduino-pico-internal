@@ -47,6 +47,7 @@ endif()
 
 if (${cpu} MATCHES "rp2040")
     set(xcd
+        NO_USB
         PICO_RP2040_B0_SUPPORTED=1
         PICO_RP2040_B1_SUPPORTED=1
         PICO_RP2040_B2_SUPPORTED=1
@@ -334,6 +335,6 @@ add_custom_command(TARGET pico-${cpu} POST_BUILD
     COMMAND mkdir -p ../../../include/${cpu}/pico_base/pico
     COMMAND cp ./generated/pico_base/pico/version.h ../../../include/${cpu}/pico_base/pico/.
     COMMAND sed 's/include.*pico-sdk/include \"..\\/..\\/pico-sdk/' ./generated/pico_base/pico/config_autogen.h > ../../../include/${cpu}/pico_base/pico/config_autogen.h
-    COMMAND cp ../tusb_config.h ../../../include/${cpu}/.
+    # COMMAND cp ../tusb_config.h ../../../include/${cpu}/.
     COMMAND cp ../btstack_config.h ../../../include/${cpu}/.
 )
