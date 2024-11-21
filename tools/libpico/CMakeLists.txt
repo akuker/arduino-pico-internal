@@ -48,6 +48,7 @@ endif()
 if (${cpu} MATCHES "rp2040")
     set(xcd
         NO_USB
+        PIO_FRAMEWORK_ARDUINO_NO_USB
         PICO_RP2040_B0_SUPPORTED=1
         PICO_RP2040_B1_SUPPORTED=1
         PICO_RP2040_B2_SUPPORTED=1

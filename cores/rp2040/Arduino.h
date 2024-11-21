@@ -118,6 +118,7 @@ extern bool __isFreeRTOS;
 // emptyString is an ESP-ism, a constant string with ""
 extern const String emptyString;
 
+#ifndef NO_USB
 #ifdef USE_TINYUSB
 // Needed for declaring Serial
 #include "Adafruit_USBD_CDC.h"
@@ -126,6 +127,8 @@ extern const String emptyString;
 #endif
 
 #include "SerialUART.h"
+#endif
+
 #include "RP2040Support.h"
 #include "SerialPIO.h"
 #include "Bootsel.h"
