@@ -133,6 +133,7 @@ target_compile_definitions(common-${cpu} INTERFACE
     LWIP_UDP=1
     LWIP_IGMP=1
     LWIP_CHECKSUM_CTRL_PER_NETIF=1
+    USE_TINYUSB
     ${xcd}
     ${ppp}
 )

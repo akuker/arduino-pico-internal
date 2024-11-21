@@ -54,9 +54,9 @@ cd build-rp2350
 CPU=rp2350 cmake ..
 make -j
 
-cd ..
-rm -rf build-rp2350-riscv
-mkdir build-rp2350-riscv
-cd build-rp2350-riscv
-CPU=rp2350-riscv cmake ..
-make -j
+#cd ..
+#rm -rf build-rp2350-riscv
+#mkdir build-rp2350-riscv
+#cd build-rp2350-riscv
+#CPU=rp2350-riscv cmake ..
+#make -j
