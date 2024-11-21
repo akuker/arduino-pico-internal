@@ -208,8 +208,8 @@ target_link_libraries(pico-${cpu}
     pico_unique_id
     pico_util
     ${xll1}
-    tinyusb
-    tinyusb_device_unmarked
+    # tinyusb
+    # tinyusb_device_unmarked
 )
 
 add_library(ipv4-${cpu} STATIC)
