@@ -65,7 +65,7 @@ extern void __loop() {
 #ifdef USE_TINYUSB
     yield();
 #endif
-
+#ifndef DISABLE_ARDUINO_USB
     if (arduino::serialEventRun) {
         arduino::serialEventRun();
     }
@@ -75,6 +75,7 @@ extern void __loop() {
     if (arduino::serialEvent2Run) {
         arduino::serialEvent2Run();
     }
+#endif
 }
 static struct _reent *_impure_ptr1 = nullptr;
 
@@ -100,7 +101,7 @@ extern "C" int main() {
         initFreeRTOS();
     }
 
-#ifndef NO_USB
+#if !defined(NO_USB) || !defined(DISABLE_ARDUINO_USB)
 #ifdef USE_TINYUSB
     TinyUSB_Device_Init(0);
 
